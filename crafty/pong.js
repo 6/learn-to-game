@@ -47,8 +47,8 @@ Pong.go = function() {
   			this.y += this.dY;
   		})
   		.onHit('Paddle', function () {
-  		this.dX *= -1;
-  	})
+  		  this.dX *= -1;
+  	  })
 
   	//Score boards
   	Crafty.e("LeftPoints, DOM, 2D, Text")
