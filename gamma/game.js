@@ -11,6 +11,15 @@ require(['gma/base', 'gma/manager', 'gma/entities/character', 'gma/events', 'gma
                 greencube : ['meshTemplate', {
                     mesh : gma.unitCubeInfo.mesh,
                     material : {color : "#090"}
+                }],
+                brickscube : ['meshTemplate', {
+                    mesh : gma.unitCubeInfo.mesh,
+                    texture : {
+                        // can't do locally
+                        src:'bricks.jpg',
+                        repeatX:2,
+                        repeatY:2
+                    }
                 }]
             },
             types: {
@@ -42,7 +51,7 @@ require(['gma/base', 'gma/manager', 'gma/entities/character', 'gma/events', 'gma
                 gma.platformEnemy({left:-5, bottom:0, width:3, height:6}),
                 {type:'jumpingJack', bottom:0, left:-2},
                 {top:0, left:-7, width:9, height:1},
-                {top:10, left:2, width:20, height:3}
+                {template:'brickscube', top:10, left:2, width:20, height:7}
             ]
         };
         manager.storeLevels(myLevel);
