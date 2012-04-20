@@ -1,10 +1,15 @@
-require(['gma/base', 'gma/manager'],
+require(['gma/base', 'gma/manager', 'gma/entities/character', 'gma/events'],
 
     function(gma) {
         // The game specification is contained within this function.
         var manager = gma.manager({width: 600,height: 500});
         
+        manager.character = gma.character({left:0, bottom:0, width:3, height:6,depth:3});
+        
         var myLevel = {
+            spawn : {
+              main : [15, 24]
+            },
             entities : [
                 {top:0, left:-7, width:9, height:1},
                 {top:10, left:2, width:20, height:3}
