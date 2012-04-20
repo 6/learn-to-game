@@ -19,7 +19,7 @@ require(['gma/base', 'gma/manager', 'gma/entities/character', 'gma/events'],
         
         gma.keyHandler.register(37, manager.character.move.curry(gma.constants.LEFT));
         gma.keyHandler.register(39, manager.character.move.curry(gma.constants.RIGHT));
-        gma.keyHandler.register(32, manager.character.jump);
+        gma.keyHandler.register(38, manager.character.jump);
         
         // intiate the game loop: http://gammajs.org/glossary.html#term-game-loop
         manager.init();
