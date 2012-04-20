@@ -1,4 +1,10 @@
 Pong = {};
+
+paddle_frame = function() {
+  if(this.y <= 0) this.y = 0;
+  if(this.y >= 200) this.y = 200;
+};
+
 Pong.go = function() {
   Crafty.init(600, 300);
 
@@ -7,10 +13,12 @@ Pong.go = function() {
   	Crafty.e("Paddle, 2D, DOM, Color, Multiway")
   		.color('rgb(255,0,0)')
   		.attr({ x: 20, y: 100, w: 10, h: 100 })
+  		.bind('EnterFrame', paddle_frame)
   		.multiway(4, { W: -90, S: 90 });
   	Crafty.e("Paddle, 2D, DOM, Color, Multiway")
   		.color('rgb(0,255,0)')
   		.attr({ x: 580, y: 100, w: 10, h: 100 })
+  		.bind('EnterFrame', paddle_frame)
   		.multiway(4, { UP_ARROW: -90, DOWN_ARROW: 90 });
 
   	//Ball
