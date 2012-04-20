@@ -27,6 +27,14 @@ require(['gma/base', 'gma/manager', 'gma/entities/character', 'gma/events', 'gma
                  locZ : 60,
                  attached : ['character',0, 3]
              },
+             light : {
+                 myLight : {
+                     type : GLGE.L_POINT,
+                     rotY : 1.84,
+                     color    : "#f00",
+                     attached : ['character', 0,8,30]
+                 }
+            },
             spawn : {
               main : [15, 24]
             },
