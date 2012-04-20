@@ -23,6 +23,10 @@ require(['gma/base', 'gma/manager', 'gma/entities/character', 'gma/events', 'gma
         });
         
         var myLevel = {
+            camera : {
+                 locZ : 60,
+                 attached : ['character',0, 3]
+             },
             spawn : {
               main : [15, 24]
             },
