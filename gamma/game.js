@@ -1,4 +1,4 @@
-require(['gma/base', 'gma/manager', 'gma/entities/character', 'gma/events'],
+require(['gma/base', 'gma/manager', 'gma/entities/character', 'gma/events', 'gma/entities/enemy'],
 
     function(gma) {
         // The game specification is contained within this function.
@@ -11,6 +11,7 @@ require(['gma/base', 'gma/manager', 'gma/entities/character', 'gma/events'],
               main : [15, 24]
             },
             entities : [
+                gma.platformEnemy({left:-5, bottom:0, width:3, height:6}),
                 {top:0, left:-7, width:9, height:1},
                 {top:10, left:2, width:20, height:3}
             ]
