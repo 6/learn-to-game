@@ -6,12 +6,29 @@ require(['gma/base', 'gma/manager', 'gma/entities/character', 'gma/events', 'gma
         
         manager.character = gma.character({left:0, bottom:0, width:3, height:6,depth:3});
         
+        manager.addCustomDefinitions({
+            templates: {
+                greencube : ['meshTemplate', {
+                    mesh : gma.unitCubeInfo.mesh,
+                    material : {color : "#090"}
+                }]
+            },
+            types: {
+              jumpingJack: ['jumpingEnemy', {
+                  width    : 1,
+                  height   : 2,
+                  template : 'greencube'
+              }]
+            }
+        });
+        
         var myLevel = {
             spawn : {
               main : [15, 24]
             },
             entities : [
                 gma.platformEnemy({left:-5, bottom:0, width:3, height:6}),
+                {type:'jumpingJack', bottom:0, left:-2},
                 {top:0, left:-7, width:9, height:1},
                 {top:10, left:2, width:20, height:3}
             ]
