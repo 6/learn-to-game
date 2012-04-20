@@ -4,7 +4,7 @@ require(['gma/base', 'gma/manager', 'gma/entities/character', 'gma/events', 'gma
         // The game specification is contained within this function.
         var manager = gma.manager({width: 600,height: 500});
         
-        manager.character = gma.character({left:0, bottom:0, width:3, height:6,depth:3});
+        manager.character = gma.character({left:0, bottom:0, width:3, height:6,depth:3, template:'gorilla'});
         
         manager.addCustomDefinitions({
             templates: {
@@ -20,6 +20,14 @@ require(['gma/base', 'gma/manager', 'gma/entities/character', 'gma/events', 'gma
                         repeatX:2,
                         repeatY:2
                     }
+                }],
+                gorilla : ['colladaTemplate', {
+                    collada : {
+                        document : 'gorilla.dae'
+                    },
+                    yRot : 1.57,
+                    yOffset : -0.5,
+                    yScale : 0.7
                 }]
             },
             types: {
